@@ -1,28 +1,35 @@
 @echo off
 
-:: HTML�v���W�F�N�g���쐬����R�}���h
+:: UTF-8へ変更
+chcp 65001
 
-:: TODO: �e�X�g�p�Ƀf�B���N�g�����ړ����Ă��邾���Ȃ̂Ō�ŏ���
+:: HTMLプロジェクトを作成するコマンド
+
+set SITE_TITLE=%~1
+
+:: TODO: テスト用にディレクトリを移動しているだけなので後で消す
 cd D:\test
 
-echo "HTML�v���W�F�N�g���쐬���܂�"
+echo "HTMLプロジェクトを作成します"
 
 call npm init --y
 
-:: Node�̃C���X�g�[������
+:: Nodeのインストール処理
 call npm install typescript
 call npm install sass
 call npm install rimraf
 
-:: TypeScript�̏���������
+:: TypeScriptの初期化処理
 call tsc --init
 
-:: src�t�H���_���쐬
+:: srcフォルダを作成
 mkdir src
 
-:: src�t�H���_���Ŋe��v�f���쐬
+:: srcフォルダ内で各種要素を作成
 cd src
 mkdir ts
 mkdir scss
+
+call %~dp0Module\create_html.bat %SITE_TITLE%
 
 echo This is html-init
