@@ -17,6 +17,12 @@ call npm install rimraf
 :: TypeScriptの初期化処理
 call tsc --init
 
+:: srcフォルダを作成
 mkdir src
+
+:: srcフォルダ内で各種要素を作成
+cd src
+mkdir ts
+mkdir scss
 
 echo This is html-init
