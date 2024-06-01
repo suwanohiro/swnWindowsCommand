@@ -10,11 +10,11 @@ set SITE_TITLE=%~1
 :: TODO: テスト用にディレクトリを移動しているだけなので後で消す
 cd D:\test
 
-echo "HTMLプロジェクトを作成します"
+echo HTMLプロジェクトを作成します
 
 call npm init --y
 
-:: Nodeのインストール処理
+:: Nodeの各種要素インストール処理
 call npm install typescript
 call npm install sass
 call npm install rimraf
