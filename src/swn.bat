@@ -1,16 +1,19 @@
 @echo off
 
+:: UTF-8ã¸å¤‰æ›´
+chcp 65001
+
 set command=%1
 shift
 
-:: ƒJƒŒƒ“ƒgƒfƒBƒŒƒNƒgƒŠ‚ğ•Û‘¶
+:: ã‚«ãƒ¬ãƒ³ãƒˆãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã‚’ä¿å­˜
 set saved_dir=%cd%
 
 if "%command%" == "html-init" (
-    call commands\html-init\html-init.bat
+    call commands\html-init\html-init.bat %1
 )
 
-:: ƒJƒŒƒ“ƒgƒfƒBƒŒƒNƒgƒŠ‚ğ•œŒ³
+:: ã‚«ãƒ¬ãƒ³ãƒˆãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã‚’å¾©å…ƒ
 cd /d %saved_dir%
 
 echo "end tasks"
