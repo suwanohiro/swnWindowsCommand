@@ -3,4 +3,8 @@
 set command=%1
 shift
 
-echo "%command%"
+if "%command%" == "html-init" (
+    call commands\html-init\html-init.bat
+)
+
+echo "end tasks"
