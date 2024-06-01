@@ -36,8 +36,18 @@ call %~dp0Module\create_html.bat %SITE_TITLE%
 :: tsフォルダへ移動
 cd ts
 
-:: onload.tsファイルを生成
+:: tsファイルを生成
 call %~dp0Module\create_onload_ts.bat
 call %~dp0Module\create_Application_ts.bat
 
-echo This is html-init
+cd ../
+
+:: scssフォルダへ移動
+cd scss
+
+:: main.scssファイルを生成
+call %~dp0Module\create_main_scss.bat
+
+cd ../
+
+echo HTMLプロジェクトの作成完了
