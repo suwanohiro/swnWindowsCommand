@@ -30,6 +30,13 @@ cd src
 mkdir ts
 mkdir scss
 
+:: index.html ファイルを生成
 call %~dp0Module\create_html.bat %SITE_TITLE%
+
+:: tsフォルダへ移動
+cd ts
+
+:: onload.tsファイルを生成
+call %~dp0Module\create_onload_ts.bat
 
 echo This is html-init
