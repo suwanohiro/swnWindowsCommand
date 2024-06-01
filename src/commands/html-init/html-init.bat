@@ -6,6 +6,7 @@ chcp 65001
 :: HTMLプロジェクトを作成するコマンド
 
 set SITE_TITLE=%~1
+set OPTION=%~2
 
 :: TODO: テスト用にディレクトリを移動しているだけなので後で消す
 cd D:\test
@@ -21,6 +22,11 @@ call npm install rimraf
 
 :: TypeScriptの初期化処理
 call tsc --init
+
+:: .gitignoreファイル生成
+if not "%2"=="--nogit" (
+    call %~dp0Module\create_gitignore.bat
+)
 
 :: srcフォルダを作成
 mkdir src
@@ -40,6 +46,7 @@ cd ts
 call %~dp0Module\create_onload_ts.bat
 call %~dp0Module\create_Application_ts.bat
 
+:: srcフォルダへ戻る
 cd ../
 
 :: scssフォルダへ移動
@@ -48,6 +55,7 @@ cd scss
 :: main.scssファイルを生成
 call %~dp0Module\create_main_scss.bat
 
+:: srcフォルダへ戻る
 cd ../
 
 echo HTMLプロジェクトの作成完了

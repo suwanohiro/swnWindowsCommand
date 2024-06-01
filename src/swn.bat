@@ -10,7 +10,7 @@ shift
 set saved_dir=%cd%
 
 if "%command%" == "html-init" (
-    call commands\html-init\html-init.bat %1
+    call commands\html-init\html-init.bat %1 %2
 )
 
 :: カレントディレクトリを復元
