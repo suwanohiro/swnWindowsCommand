@@ -38,5 +38,6 @@ cd ts
 
 :: onload.tsファイルを生成
 call %~dp0Module\create_onload_ts.bat
+call %~dp0Module\create_Application_ts.bat
 
 echo This is html-init
